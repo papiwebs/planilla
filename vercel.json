@@ -1,7 +1,19 @@
 {
+  "version": 2,
+  "public": true,
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs20.x"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
